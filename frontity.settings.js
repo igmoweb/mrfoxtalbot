@@ -33,6 +33,16 @@ const settings = {
         }
       }
     },
+    {
+      name: 'frontity-social-previews',
+      state: {
+        socialPreviews: {
+          twitter: {
+            creator: 'mrfoxtalbot',
+          },
+        },
+      },
+    },
     "@frontity/tiny-router",
     "@frontity/html2react"
   ]
