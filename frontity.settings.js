@@ -2,7 +2,7 @@ const settings = {
   "name": "mxfoxtalbot",
   "state": {
     "frontity": {
-      "url": "https://mrfoxtalbot.wordpress.com/",
+      "url": "https://mrfoxtalbot.now.sh/",
       "title": "MrFoxTalbot",
       "description": "No solo WordPress"
     }
