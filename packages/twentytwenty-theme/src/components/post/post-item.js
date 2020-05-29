@@ -18,7 +18,8 @@ const PostItem = ({
   state,
   item,
   libraries,
-  showExcerpt,
+  className,
+  contentType,
   showMedia = true,
 }) => {
   // Get all categories
@@ -38,10 +39,16 @@ const PostItem = ({
    */
   const tags = item.tags && item.tags.map((tagId) => allTags[tagId]);
 
-  const content = showExcerpt ? item.excerpt : item.content;
+  let content = item.content;
+  if ( contentType === 'none' ) {
+    content = false;
+  }
+  else if ( contentType === 'excerpt' ) {
+    content = item.excerpt;
+  }
   const { Component: Html2React } = libraries.html2react;
   return (
-    <Post>
+    <Post className={ className }>
       <PostHeader>
         <SectionContainer>
           {/* If the post has categories, render the categories */}
@@ -89,7 +96,7 @@ export default connect(PostItem);
 
 // All styles :)
 
-export const Post = styled.article`
+export const Post = styled.article`   
   &:first-of-type {
     padding: 4rem 0 0;
   }
@@ -103,6 +110,7 @@ export const Post = styled.article`
 
 export const PostHeader = styled.header`
   text-align: center;
+  flex-grow: 2;
 `;
 
 // Header sizes bases on style.css
@@ -128,7 +136,7 @@ export const SectionContainer = styled.div`
 export const PostTitle = styled.h1`
   margin: 0;
   @media (min-width: 700px) {
-    font-size: 6.4rem !important;
+    font-size: 2.6rem !important;
   }
 `;
 

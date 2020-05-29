@@ -50,7 +50,7 @@ const EntryCategoriesInner = styled.div`
 
 const CategoryTag = styled(Link)`
   border-bottom: 0.15rem solid currentColor;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.036666667em;
   margin: 0.5rem 0 0 1rem;
@@ -58,7 +58,7 @@ const CategoryTag = styled(Link)`
   text-transform: uppercase;
 
   @media (min-width: 700px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 1rem 0 0 2rem;
   }
 

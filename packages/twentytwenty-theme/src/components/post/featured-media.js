@@ -22,7 +22,7 @@ const FeaturedMedia = ({ state, id, className }) => {
       ) || null;
 
   return (
-    <Figure className={className}>
+    <Figure className={`${className} featured-media`}>
       <SectionContainer size="medium">
         <Image
           alt={media.title.rendered}

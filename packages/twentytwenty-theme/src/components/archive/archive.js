@@ -1,4 +1,4 @@
-import { connect, decode } from "frontity";
+import { connect, decode, styled } from "frontity";
 import React, { Fragment, useEffect } from "react";
 import Article from "../post/post-item";
 import ArchiveHeader from "./archive-header";
@@ -42,10 +42,10 @@ const Archive = ({ state, showExcerpt, showMedia }) => {
         // Render one Item component for each one.
         return (
           <Fragment key={item.id}>
-            <Article
+            <ArchiveContainer
               key={item.id}
               item={item}
-              showExcerpt={_showExcerpt}
+              contentType='none'
               showMedia={showMedia}
             />
             {!isLastArticle && <PostSeparator />}
@@ -62,5 +62,25 @@ const Archive = ({ state, showExcerpt, showMedia }) => {
     </>
   );
 };
+
+const ArchiveContainer = styled( Article )`
+  figure {
+    display: none;
+  }  
+  .post-meta {
+    display: none;
+  }
+  @media (min-width: 700px) {
+    display: flex;
+    figure {
+      flex-basis: 50%;
+      min-height: unset;
+      display: block;
+    }
+    .post-meta {
+      display: block;
+    }  
+  }
+`;
 
 export default connect(Archive);
